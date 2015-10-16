@@ -10,16 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var rocketImage: UIImageView!
+    @IBOutlet weak var cloudImage: UIImageView!
+    
+    var initialRocketFrame:CGRect = CGRectMake(0, 0, 0, 0)
+    var initialCloudFrame:CGRect = CGRectMake(0, 0, 0, 0)
+    
+    var timer:NSTimer?
+    var isRunning:Bool = false
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // store the initial locations of things
+        initialCloudFrame  = cloudImage.frame
+        initialRocketFrame = rocketImage.frame
+        
+        // start the animation loop
+    }
+    
+    func resetUI() {
+        rocketImage.frame = initialRocketFrame
+        rocketImage.image = UIImage(named: "rocket")
+        cloudImage.frame = initialCloudFrame
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+ /*****  ADD CODE BELOW HERE *****/
+
+    @IBAction func liftOffTouched(sender: AnyObject) {
+        // button touched
     }
-
-
+    
+    
 }
 
