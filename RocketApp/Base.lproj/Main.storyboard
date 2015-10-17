@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RocketApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket" translatesAutoresizingMaskIntoConstraints="NO" id="iRk-Ek-TLD">
+                                <rect key="frame" x="478" y="376" width="107" height="224"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="hFR-Le-VTn"/>
+                                    <constraint firstAttribute="height" constant="224" id="wAr-1H-TLz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grass" translatesAutoresizingMaskIntoConstraints="NO" id="tDd-Px-DWe">
+                                <rect key="frame" x="0.0" y="487" width="600" height="113"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="0lE-I7-6uK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-Hz-2lM">
+                                <rect key="frame" x="38" y="54" width="150" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="eFu-tr-3qL"/>
+                                    <constraint firstAttribute="height" constant="80" id="qHt-C7-FUd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeM-eU-ZW3">
+                                <rect key="frame" x="94" y="398" width="57" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BcI-Qi-ZZe"/>
+                                    <constraint firstAttribute="width" constant="57" id="sqb-m8-IeQ"/>
+                                </constraints>
+                                <state key="normal" title="Lift Off!!"/>
+                                <connections>
+                                    <action selector="liftOffTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="udM-LS-FMR"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="aBu-FQ-hJW">
+                                <rect key="frame" x="18" y="436" width="208" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1y8-Fg-i22"/>
+                                    <constraint firstAttribute="width" constant="204" id="xdx-b5-3dK"/>
+                                </constraints>
+                            </slider>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aBu-FQ-hJW" firstAttribute="top" secondItem="YeM-eU-ZW3" secondAttribute="bottom" constant="8" id="9Gt-dZ-sgR"/>
+                            <constraint firstItem="aBu-FQ-hJW" firstAttribute="centerX" secondItem="YeM-eU-ZW3" secondAttribute="centerX" id="9vI-7u-lw6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iRk-Ek-TLD" secondAttribute="trailing" constant="-5" id="Efw-QZ-a2K"/>
+                            <constraint firstAttribute="trailing" secondItem="tDd-Px-DWe" secondAttribute="trailing" id="LST-tj-9rw"/>
+                            <constraint firstItem="tDd-Px-DWe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MX4-JH-aIg"/>
+                            <constraint firstItem="tDd-Px-DWe" firstAttribute="top" secondItem="aBu-FQ-hJW" secondAttribute="bottom" constant="21" id="Xlu-fq-H2g"/>
+                            <constraint firstItem="ne3-Hz-2lM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="cMR-JH-Ogt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tDd-Px-DWe" secondAttribute="bottom" id="hEm-vV-rKH"/>
+                            <constraint firstItem="aBu-FQ-hJW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="idM-ks-yL4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iRk-Ek-TLD" secondAttribute="bottom" id="mRA-TX-zWj"/>
+                            <constraint firstItem="ne3-Hz-2lM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="o3W-R6-oE0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cloudImage" destination="ne3-Hz-2lM" id="pOt-2R-JYo"/>
+                        <outlet property="rocketImage" destination="iRk-Ek-TLD" id="Fjj-SG-msz"/>
+                        <outlet property="slider" destination="aBu-FQ-hJW" id="eky-CO-dkG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="184" y="277"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud" width="2000" height="2000"/>
+        <image name="grass" width="1280" height="250"/>
+        <image name="rocket" width="958" height="2654"/>
+    </resources>
 </document>
