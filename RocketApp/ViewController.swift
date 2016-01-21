@@ -40,7 +40,8 @@ class ViewController: UIViewController {
  /*****  ADD CODE BELOW HERE *****/
 
     @IBAction func liftOffTouched(sender: AnyObject) {
-        // button touched
+        print("D'oh!")
+//        print("Slider set to \(slider.value)")
     }
     
     
